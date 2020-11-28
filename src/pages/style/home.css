@@ -1,0 +1,8 @@
+.main{
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #282c34;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}

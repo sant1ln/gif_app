@@ -1,9 +1,9 @@
 .Gif{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: auto;
     margin: 16px;
     color: orange;
     box-sizing: border-box;

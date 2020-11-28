@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
-import {Link, Route} from 'wouter'
+import { Route } from 'wouter'
 
 import ListOfGifs from './components/ListOfGifs'
+import Home from './pages/Home'
 
 function App() {
 
   return (
     <div className="App">
-      <main className="App-content">
-        <Link to="/gif/morty" >Morty</Link>
-        <Link to="/gif/rick">Rick</Link>
-        <Route path="/gif/:keyword" component={ListOfGifs}/>
+      <main>
+        <Route path="/" component={Home} />
+        <Route path="/gif/:keyword" component={ListOfGifs} />
         {/* <ListOfGifs keyword='computer'/> */}
       </main>
     </div>
