@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Gif from "./Gif";
+import Giff from "./Gif";
 import getGifs from "../services/getGifs";
 import Navbar from "../components/Navbar";
 import "./style/ListOfGifs.css";
@@ -17,7 +17,7 @@ const ListOfGifs = ({ params }) => {
       <Navbar />
       <gif className="container_gif">
         {gifs.map((singleGif) => (
-          <Gif
+          <Giff
             title={singleGif.title}
             url={singleGif.url}
             id={singleGif.id}

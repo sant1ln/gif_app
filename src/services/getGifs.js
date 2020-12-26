@@ -20,4 +20,10 @@ export default function getGifs({keyword = 'trending'}={}){
         })
 }
 
+
+
+/* export function getDefaultGif(){
+    console.log('i works')
+}
+ */
 /* https://api.giphy.com/v1/gifs/search?api_key=dSgcSo7ecFdPA1YXGOUl9X5P4boSmj4y&q=music&limit=5&offset=0&rating=g&lang=en */
