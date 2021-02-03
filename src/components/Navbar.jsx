@@ -37,9 +37,10 @@ const Navbar = () => {
         <Link to="/gif/games">Games</Link>
         <Link to="/gif/cats">Cats</Link>
         <Link to="/gif/music">Music</Link>
+        <Link to="/fav">Favorite</Link>
       </div>
       <form onSubmit={search_txt} className="navbar_search">
-         <input onChange={handleChange} type="text" placeholder="Type something"/>
+          <input onChange={handleChange} type="text" placeholder="Type something"/>
           <img onClick={search_txt} src={Search} alt=""/>
       </form>
     </div>

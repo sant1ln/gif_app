@@ -15,16 +15,17 @@ const ListOfGifs = ({ params }) => {
   return (
     <>
       <Navbar />
-      <gif className="container_gif">
+      <div className="container_gif">
         {gifs.map((singleGif) => (
           <Giff
-            title={singleGif.title}
-            url={singleGif.url}
+            isList={false}
             id={singleGif.id}
+            img={singleGif.url}
+            title={singleGif.title}
             key={singleGif.id}
           />
         ))}
-      </gif>
+      </div>
     </>
   );
 };

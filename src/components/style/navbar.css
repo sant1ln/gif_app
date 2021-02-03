@@ -7,7 +7,6 @@
 }
 
 .navbar_logo{
-    width: 20%;
     margin: 0;
 }
 
@@ -39,6 +38,7 @@
     width: 27%;
     align-self: center;
     background-color: #959aa1;
+    position: relative;
 } 
 
 .navbar_search input{
@@ -50,5 +50,10 @@
     background-color: transparent;
     font-size: 20px;
     color: white;
+}
+
+.navbar_search img{
+    position: absolute;
+    left: 90%;
 }
 
