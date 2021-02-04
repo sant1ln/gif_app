@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { EmptyFav } from '../components/EmptyFav'
 import { Footer } from '../components/Footer'
 import Gif from '../components/Gif'
-import Navbar from '../components/Navbar'
 import AppContext from '../context/AppContext'
 
 export const Favorites = () => {
@@ -10,9 +9,6 @@ export const Favorites = () => {
     const {favorites} = state;
     return (
         <div>
-            <nav>
-                <Navbar />
-            </nav>
             <h2 className="title">Favorites</h2>
             <div className="container_gif">
                 {

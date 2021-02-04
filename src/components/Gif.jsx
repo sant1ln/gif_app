@@ -1,36 +1,12 @@
-import React, { useContext, useState } from "react";
-import AppContext from "../context/AppContext";
+import React from "react";
 import "./style/gif.css";
 import 'animate.css'
+import { useGif } from "../hooks/useGif";
 
 const Gif = ({isList,img,title,id}) => {
     
-    const {dispatch} = useContext(AppContext)
-    const [list, setList] = useState(false)
+  const {list,handleFavorites,removeFavorites} = useGif({isList,img,title,id})  
 
-    const handleFavorites = () =>{
-      const data = {
-        id,
-        title,
-        img,
-        isList : true
-      }
-
-        dispatch({
-            type: 'ADD_FAVORITE',
-            payload: data
-        })
-
-      setList(true)
-    }
-
-    const removeFavorites = (id) =>{
-      dispatch({
-        type: 'REMOVE_FAVORITE',
-        payload: id
-      })
-      setList(false)
-    }
   return (
     <div className="Gif">
       <img src={img} alt={title} key={id} />

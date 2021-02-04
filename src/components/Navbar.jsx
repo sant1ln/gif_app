@@ -1,27 +1,17 @@
-import React,{useState} from "react";
+import React from "react";
 import { Link} from "wouter";
+import { useSearch } from "../hooks/useSearch";
 import GipLogo from "../static/giphy-logo.png";
 import ReactLogo from "../static/logo192.png";
 
 import "./style/navbar.css";
 const Navbar = () => {
-    const [keyword,setKeyword] = useState('')
     
-    const search_txt = e =>{
-        e.preventDefault()
-        if(keyword){
-          window.location.replace(`http://localhost:3000/gif/${keyword}`)
-        }else{
-          return false
-        }
-    }
-
-    const handleChange = e =>{
-        setKeyword(e.target.value)
-    }
+  const {keyword, search_txt, handleChange,openSidebar} = useSearch()
 
   return (
     <div className="navbar">
+      <i onClick={openSidebar} className="fas fa-bars open"></i>
       <Link to="/" className="navbar_logo">
         <img src={GipLogo} alt="" />
         <img className="react_l" src={ReactLogo} alt="" />
@@ -32,10 +22,11 @@ const Navbar = () => {
         <Link to="/gif/cats">Cats</Link>
         <Link to="/gif/music">Music</Link>
         <Link to="/fav">Favorite</Link>
+        
       </div>
       <form onSubmit={search_txt} className="navbar_search">
-          <input onChange={handleChange} type="text" placeholder="Type something"/>
-          <i  onClick={search_txt} className="fas fa-search"></i>
+          <input onChange={handleChange}  value={keyword} type="text" placeholder="Search something"/>
+          <i  onClick={search_txt} className="fas fa-search search"></i>
       </form>
     </div>
   );

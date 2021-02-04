@@ -1,9 +1,8 @@
 .App {
-    width: 80%;
-    margin: 0 auto;
-    height: 100vh;
-    background-color: #282c34;
-    box-sizing: border-box;
-    font-family: 'Varela Round', sans-serif;
-  
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #282c34;
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
 }

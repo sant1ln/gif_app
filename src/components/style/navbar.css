@@ -6,6 +6,10 @@
     padding: 10px;
 }
 
+.open{
+    display: none;
+}
+
 .navbar_logo{
     margin: 0;
 }
@@ -54,10 +58,54 @@
     color: white;
 }
 
-.navbar_search i{
-    font-size: 1.5rem;
+.search{
+    font-size: 1.2rem;
     opacity: .4;
     position: absolute;
     left: 90%;
 }
 
+
+
+
+
+
+@media screen and (max-width: 769px){
+    
+    .navbar{
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .navbar_search{
+        width: 50%;
+    }
+
+    .navbar_directs{
+        display: none;
+    }
+    
+    .open{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        background-color: #bba2d3;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        border-radius: 25px;
+        position: fixed;
+        left: 1%;
+        z-index: 100000;
+    }
+}
+
+@media (max-width: 425px){
+    .navbar{
+        flex-direction: column;
+    }
+    .navbar_search{
+        width: 80%;
+    }
+   }

@@ -1,12 +1,11 @@
 import React from "react";
 import { Footer } from "../components/Footer";
-import Navbar from "../components/Navbar";
 import MiniGiphy from "../static/logomin.png";
 import "./style/about.css";
 export const about = () => {
   return (
     <div>
-      <Navbar />
+      
       <div className="about_container">
         <div className="main_text">
           <h3>This is a app where i get data from</h3>

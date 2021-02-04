@@ -40,3 +40,9 @@
 .Gif img{
     object-fit: contain;
 }
+
+@media (max-width: 425px){
+   .Gif img{
+       max-width: 381px;
+   }
+}

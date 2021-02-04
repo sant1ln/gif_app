@@ -14,6 +14,13 @@ export const uiReducer = (state={},action) => {
                 ...state,
                 favorites: state.favorites.filter(item => item.id !== action.payload)
             }
+
+        case 'TOGGLE_SIDEBAR':
+            return{
+                ...state,
+                sidebar: !state.sidebar
+            }
+        
         default: return state;
     }
 }
