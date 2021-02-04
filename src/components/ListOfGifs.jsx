@@ -4,12 +4,10 @@ import {Footer} from '../components/Footer'
 import "./style/ListOfGifs.css";
 import { useData } from "../hooks/useData";
 import { NotFound } from "./NotFound";
-import AppContext from "../context/AppContext";
 
 const ListOfGifs = ({ params }) => {
   const { keyword } = params;
    const gifs = useData(keyword)
-   const {state} = useContext(AppContext)
   return (
     <div className="app_container_sec">
 
