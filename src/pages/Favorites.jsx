@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { EmptyFav } from '../components/EmptyFav'
+import { Footer } from '../components/Footer'
 import Gif from '../components/Gif'
 import Navbar from '../components/Navbar'
 import AppContext from '../context/AppContext'
@@ -12,6 +13,7 @@ export const Favorites = () => {
             <nav>
                 <Navbar />
             </nav>
+            <h2 className="title">Favorites</h2>
             <div className="container_gif">
                 {
                     (favorites.length < 1)
@@ -19,7 +21,7 @@ export const Favorites = () => {
                     :favorites.map(fav=>(
                         <Gif
                             key={fav.id}
-                            isList={true}
+                            isList={fav.isList}
                             id={fav.id}
                             img={fav.img}
                             title={fav.title}
@@ -27,6 +29,7 @@ export const Favorites = () => {
                     ))
                 }
             </div>
+            <Footer/>
         </div>
     )
 }

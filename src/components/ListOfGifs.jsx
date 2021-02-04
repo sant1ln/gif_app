@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Giff from "./Gif";
 import getGifs from "../services/getGifs";
 import Navbar from "../components/Navbar";
+import {Footer} from '../components/Footer'
 import "./style/ListOfGifs.css";
 
 const ListOfGifs = ({ params }) => {
@@ -13,12 +14,13 @@ const ListOfGifs = ({ params }) => {
   }, [keyword]);
 
   return (
-    <>
+    <div className="app_container_sec">
       <Navbar />
+      <h2 className="title">{keyword}</h2>
       <div className="container_gif">
         {gifs.map((singleGif) => (
           <Giff
-            isList={false}
+            isList={singleGif.isList}
             id={singleGif.id}
             img={singleGif.url}
             title={singleGif.title}
@@ -26,7 +28,8 @@ const ListOfGifs = ({ params }) => {
           />
         ))}
       </div>
-    </>
+      <Footer/>
+    </div>
   );
 };
 

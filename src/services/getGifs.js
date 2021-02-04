@@ -1,5 +1,5 @@
 const apiKey = 'dSgcSo7ecFdPA1YXGOUl9X5P4boSmj4y'
-const max = 9
+const max = 10
 
 export default function getGifs({keyword = 'trending'}={}){
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=${max}&offset=0&rating=g&lang=en`
@@ -22,8 +22,3 @@ export default function getGifs({keyword = 'trending'}={}){
 
 
 
-/* export function getDefaultGif(){
-    console.log('i works')
-}
- */
-/* https://api.giphy.com/v1/gifs/search?api_key=dSgcSo7ecFdPA1YXGOUl9X5P4boSmj4y&q=music&limit=5&offset=0&rating=g&lang=en */

@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import AppContext from './context/AppContext';
 import { uiReducer } from './reducer/uiReducer';
 import { initialState } from './initialState';
+import { about } from './pages/about';
 
 function App() {
 
@@ -20,10 +21,12 @@ function App() {
             <Route path="/" component={Home} />
             <Route path="/gif/:keyword" component={ListOfGifs} />
             <Route path="/fav" component={Favorites} />
+            <Route path="/about" component={about}/>
           </Switch>
         </main>
       </AppContext.Provider>
-    </div>
+            
+    </div>  
   );
 }
 

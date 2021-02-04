@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AppContext from "../context/AppContext";
 import "./style/gif.css";
+import 'animate.css'
 
 const Gif = ({isList,img,title,id}) => {
-    /* const {id,url,title} = data */
+    
     const {dispatch} = useContext(AppContext)
-   /*  const {favorites} = state */ 
+    const [list, setList] = useState(false)
+
     const handleFavorites = () =>{
       const data = {
         id,
@@ -13,26 +15,29 @@ const Gif = ({isList,img,title,id}) => {
         img,
         isList : true
       }
-       
+
         dispatch({
             type: 'ADD_FAVORITE',
             payload: data
         })
-      /* let item = document.querySelector(`#${id}`)
-      item.classList.remove('far', 'fa-star')
-      item.classList.add('far', 'fa-times-circle') */
+
+      setList(true)
     }
 
     const removeFavorites = (id) =>{
-      console.log(id)
+      dispatch({
+        type: 'REMOVE_FAVORITE',
+        payload: id
+      })
+      setList(false)
     }
   return (
     <div className="Gif">
       <img src={img} alt={title} key={id} />
       <div className="add_to_favorites_container">
         {
-          (isList)
-            ?<i onClick={()=> removeFavorites(id)} className='far fa-times-circle'></i>
+          (list || isList)
+            ?<i onClick={()=> removeFavorites(id)} className='far fa-times-circle animate__animated animate__bounceIn'></i>
             :<i onClick={handleFavorites} id={id} className='far fa-star'></i>
         }
        

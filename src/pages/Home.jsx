@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Footer } from '../components/Footer'
 import Gif from '../components/Gif'
 import Navbar from '../components/Navbar'
 import {getTrendingGifs} from '../services/getTrendingGifs'
@@ -17,12 +18,13 @@ const Home = () => {
             <nav>
                 <Navbar />
             </nav>
+            <h2>Trending!</h2>
             <div className="container_gif">
                 {
                     trendingGifs.map((item)=>(
                         <Gif
                             key={item.id}
-                            isList={false}
+                            isList={item.isList}
                             id={item.id}
                             img={item.url}
                             title={item.title}
@@ -30,6 +32,7 @@ const Home = () => {
                     ))
                 }
             </div>
+            <Footer/>
         </div>
     )
 }
