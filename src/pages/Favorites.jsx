@@ -17,7 +17,7 @@ export const Favorites = () => {
                     :favorites.map(fav=>(
                         <Gif
                             key={fav.id}
-                            isList={fav.isList}
+                            list={fav.list}
                             id={fav.id}
                             img={fav.img}
                             title={fav.title}

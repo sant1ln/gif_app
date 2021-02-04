@@ -1,16 +1,17 @@
 import { useContext, useState } from "react"
 import AppContext from "../context/AppContext"
 
-export const useGif = ({isList,img,title,id}) => {
+export const useGif = ({img,title,id}) => {
     const {dispatch} = useContext(AppContext)
     const [list, setList] = useState(false)
 
     const handleFavorites = () =>{
+      setList(true)
       const data = {
         id,
         title,
         img,
-        isList
+        list:true
       }
 
         dispatch({
@@ -18,7 +19,6 @@ export const useGif = ({isList,img,title,id}) => {
             payload: data
         })
 
-      setList(true)
     }
 
     const removeFavorites = (id) =>{

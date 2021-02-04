@@ -17,7 +17,7 @@ const Home = () => {
           {trendingGifs.map((item) => (
             <Gif
               key={item.id}
-              isList={item.isList}
+              list={item.list}
               id={item.id}
               img={item.url}
               title={item.title}
