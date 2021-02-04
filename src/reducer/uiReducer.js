@@ -15,6 +15,12 @@ export const uiReducer = (state={},action) => {
                 favorites: state.favorites.filter(item => item.id !== action.payload)
             }
 
+        case 'SEARCH_WORD':
+            return{
+                ...state,
+                searchWord: action.payload
+            }
+
         case 'TOGGLE_SIDEBAR':
             return{
                 ...state,

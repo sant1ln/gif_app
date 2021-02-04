@@ -7,6 +7,10 @@ export const useSearch = () => {
     const search_txt = e => {
         e.preventDefault()
         if (keyword) {
+            dispatch({
+                type: 'SEARCH_WORD',
+                payload: keyword
+            })
             window.location.replace(`/gif/${keyword}`)
         } else {
             return false
